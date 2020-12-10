@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('logout', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'adminDestroy'])
+Route::post('logout', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'adminDestroy'])
     ->name('admin.logout');
 Route::group(['middleware' => ['auth:admin']], function () {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
