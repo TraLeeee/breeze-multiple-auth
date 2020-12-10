@@ -48,7 +48,7 @@
 
                     <x-slot name="content">
                         <!-- Authentication -->
-                        @if(auth()->guard('admin')->check())
+                        @if(auth()->guard('admin')->check() != auth()->guard('web')->check())
                             <form method="POST" action="{{ route('admin.logout') }}">
                                 @csrf
 
