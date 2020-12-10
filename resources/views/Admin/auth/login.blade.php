@@ -2,17 +2,18 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <x-application-logo class="w-20 h-20 fill-current text-red-500" />
             </a>
-        </x-slot>
 
+        </x-slot>
+        <p class="uppercase text-xl text-center text-black-500 font-bold mt-2 mb-2">Admin Login</p>
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="#">
+        <form method="POST" action="{{ route('admin.login') }}">
             @csrf
 
             <!-- Email Address -->
