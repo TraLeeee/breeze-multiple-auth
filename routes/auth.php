@@ -10,6 +10,21 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
+/*
+|--------------------------------------------------------------------------
+| Auth Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register auth routes for your application.
+| You can define route user and admin in here.
+|
+*/
+
+Route::group(['prefix' => 'admin', 'middleware' => 'guest:admin'], function () {
+    Route::get('login', [AuthenticatedSessionController::class, 'adminCreate'])->name('admin.login');
+    Route::post('login', [AuthenticatedSessionController::class, 'adminStore']);
+});
+
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
                 ->name('register');
