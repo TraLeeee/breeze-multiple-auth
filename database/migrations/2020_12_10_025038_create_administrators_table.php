@@ -22,6 +22,7 @@ class CreateAdministratorsTable extends Migration
             $table->tinyInteger('role')->comment('1: Admin, 2: Moderator');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
