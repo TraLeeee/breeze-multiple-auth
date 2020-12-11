@@ -13,7 +13,9 @@
 
 Make sure you have PHP 7.4 already install on your machine :smiley:
 
-- Create .env from .env.example
+- Create `.env` from `.env.example`
+- Run `php artisan key:generate --ansi`
+- Run `composer install`
 - Run `npm install` then run `npm run dev`
 - Run `php artisan migrate`
 
